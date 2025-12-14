@@ -63,7 +63,7 @@ const Footer = () => {
                 Instagram
               </a>
               <a 
-                href="mailto:info@ngmun.org" 
+                href="mailto:nextgen.modelun@gmail.com" 
                 className="text-gray-300 hover:text-white transition duration-300"
               >
                 Email

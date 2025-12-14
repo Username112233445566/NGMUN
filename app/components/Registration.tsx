@@ -10,7 +10,7 @@ const Registration = () => {
     birthDate: '',
     phone: '',
     email: '',
-    institution: '',
+    telegramUsername: '', // Заменили institution на telegramUsername
     role: 'delegate',
     language: 'russian',
     committee: 'un-women',
@@ -55,7 +55,7 @@ const Registration = () => {
           birthDate: '',
           phone: '',
           email: '',
-          institution: '',
+          telegramUsername: '', // Очищаем новое поле
           role: 'delegate',
           language: 'russian',
           committee: 'un-women',
@@ -190,21 +190,22 @@ const Registration = () => {
                 />
               </div>
 
-              {/* Учебное заведение */}
+              {/* Telegram ник (вместо учебного заведения) */}
               <div className="md:col-span-2 space-y-2">
-                <label htmlFor="institution" className="block text-sm font-medium text-gray-700">
-                  {t('registration.form.institution')}
+                <label htmlFor="telegramUsername" className="block text-sm font-medium text-gray-700">
+                  Telegram ник *
                 </label>
                 <input
                   type="text"
-                  id="institution"
-                  name="institution"
-                  value={formData.institution}
+                  id="telegramUsername"
+                  name="telegramUsername"
+                  value={formData.telegramUsername}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ngmun-blue-500 focus:border-transparent transition"
-                  placeholder="Например: МГУ им. М.В. Ломоносова"
+                  placeholder="@username"
                 />
+                <p className="text-sm text-gray-500">Укажите ваш Telegram username (например: @ivan_ivanov)</p>
               </div>
             </div>
 
@@ -224,7 +225,6 @@ const Registration = () => {
                 >
                   <option value="delegate">{t('common.roles.delegate')}</option>
                   <option value="volunteer">{t('common.roles.volunteer')}</option>
-                  <option value="observer">{t('common.roles.observer')}</option>
                 </select>
               </div>
 

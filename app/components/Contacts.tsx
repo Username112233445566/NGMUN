@@ -12,14 +12,14 @@ const Contacts = () => {
     {
       name: 'Уларбекова Даткайым',
       position: t('about.secretaryGeneral'),
-      telegram: '@datska_mun',
-      email: 'ulatbekova@ngmun.org',
+      telegram: '@sucr4e',
+      email: 'ddtty044@gmail.com',
     },
     {
       name: 'Султанова Асель',
       position: t('about.deputySecretary'),
-      telegram: '@asel_mun',
-      email: 'sultanova@ngmun.org',
+      telegram: '@srwxmi',
+      email: 'srwxmi@gmail.com',
     },
   ];
 
@@ -42,8 +42,8 @@ const Contacts = () => {
       icon: <Mail size={24} className="text-ngmun-blue-600" />,
       title: t('contacts.officialEmail'),
       description: 'Для деловых предложений',
-      link: 'mailto:info@ngmun.org',
-      linkText: 'info@ngmun.org'
+      link: 'nextgen.modelun@gmail.com',
+      linkText: 'nextgen.modelun@gmail.com'
     }
   ];
 
