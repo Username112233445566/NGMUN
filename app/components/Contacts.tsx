@@ -2,11 +2,13 @@
 
 import { User, Bot, Mail, MessageCircle } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
+import { FAQItem, ContactPerson, GeneralContact } from '../../types/faq';
 
 const Contacts = () => {
   const { t } = useLanguage();
 
-  const contacts = [
+  // Типизированные данные с проверками
+  const contacts: ContactPerson[] = [
     {
       name: 'Уларбекова Даткайым',
       position: t('about.secretaryGeneral'),
@@ -21,7 +23,7 @@ const Contacts = () => {
     },
   ];
 
-  const generalContacts = [
+  const generalContacts: GeneralContact[] = [
     {
       icon: <Bot size={24} className="text-ngmun-blue-600" />,
       title: t('contacts.telegramBot'),
@@ -44,6 +46,48 @@ const Contacts = () => {
       linkText: 'info@ngmun.org'
     }
   ];
+
+  // Безопасное получение FAQ items
+  const getFAQItems = (): FAQItem[] => {
+    try {
+      const faqData = t('contacts.faqItems', { returnObjects: true }) as unknown;
+      
+      // Проверяем, что это массив
+      if (Array.isArray(faqData)) {
+        // Фильтруем только валидные объекты с полями q и a
+        return faqData.filter((item): item is FAQItem => 
+          item && 
+          typeof item === 'object' && 
+          'q' in item && 
+          'a' in item &&
+          typeof item.q === 'string' &&
+          typeof item.a === 'string'
+        );
+      }
+      
+      return getDefaultFAQItems();
+    } catch (error) {
+      console.error('Error parsing FAQ items:', error);
+      return getDefaultFAQItems();
+    }
+  };
+
+  const getDefaultFAQItems = (): FAQItem[] => [
+    { 
+      q: 'Как принять участие в конференции?', 
+      a: 'Зарегистрируйтесь на нашем сайте в разделе регистрации.' 
+    },
+    { 
+      q: 'Сколько стоит участие?', 
+      a: 'Стоимость участия уточняйте в официальном канале.' 
+    },
+    { 
+      q: 'Кто может участвовать?', 
+      a: 'Учащиеся школ, студенты и молодые специалисты.' 
+    },
+  ];
+
+  const faqItems = getFAQItems();
 
   return (
     <section id="contacts" className="py-16 md:py-24 bg-gray-50">
@@ -140,24 +184,26 @@ const Contacts = () => {
           </div>
 
           {/* FAQ */}
-          <div className="card">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">
-              {t('contacts.faq')}
-            </h3>
-            <div className="space-y-6">
-              {t('contacts.faqItems').map((faq: any, index: number) => (
-                <div key={index} className="border-b pb-6 last:border-0 last:pb-0">
-                  <h4 className="font-bold text-gray-800 mb-3 flex items-start">
-                    <span className="bg-ngmun-blue-100 text-ngmun-blue-600 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 flex-shrink-0">
-                      ?
-                    </span>
-                    {faq.q}
-                  </h4>
-                  <p className="text-gray-600 pl-9">{faq.a}</p>
-                </div>
-              ))}
+          {faqItems.length > 0 && (
+            <div className="card">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                {t('contacts.faq')}
+              </h3>
+              <div className="space-y-6">
+                {faqItems.map((faq, index) => (
+                  <div key={index} className="border-b pb-6 last:border-0 last:pb-0">
+                    <h4 className="font-bold text-gray-800 mb-3 flex items-start">
+                      <span className="bg-ngmun-blue-100 text-ngmun-blue-600 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 flex-shrink-0">
+                        ?
+                      </span>
+                      {faq.q}
+                    </h4>
+                    <p className="text-gray-600 pl-9">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>
