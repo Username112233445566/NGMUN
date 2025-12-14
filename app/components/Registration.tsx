@@ -321,7 +321,7 @@ const Registration = () => {
                   {t('registration.importantInfo')}
                 </h4>
                 <ul className="text-gray-700 space-y-1">
-                  {t('registration.infoList').map((item: string, index: number) => (
+                  {(t('registration.infoList') as string[]).map((item: string, index: number) => (
                     <li key={index}>• {item}</li>
                   ))}
                 </ul>

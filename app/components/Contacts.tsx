@@ -50,7 +50,7 @@ const Contacts = () => {
   // Безопасное получение FAQ items
   const getFAQItems = (): FAQItem[] => {
     try {
-      const faqData = t('contacts.faqItems', { returnObjects: true }) as unknown;
+      const faqData = t('contacts.faqItems') as unknown;
       
       // Проверяем, что это массив
       if (Array.isArray(faqData)) {

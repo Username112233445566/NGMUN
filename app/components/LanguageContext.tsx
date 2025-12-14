@@ -339,7 +339,7 @@ const translations = {
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (path: string) => string;
+  t: (path: string, options?: { returnObjects?: boolean }) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -347,7 +347,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('ru');
 
-  const t = (path: string): string => {
+  const t = (path: string, options?: { returnObjects?: boolean }): any => {
     const keys = path.split('.');
     let value: any = translations[language];
     
@@ -355,8 +355,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       if (value && typeof value === 'object' && key in value) {
         value = value[key];
       } else {
-        return path; // Возвращаем путь, если перевод не найден
+        return path;
       }
+    }
+    
+    if (options?.returnObjects && (Array.isArray(value) || typeof value === 'object')) {
+      return value;
     }
     
     return value || path;
