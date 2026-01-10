@@ -177,16 +177,6 @@ const Header = () => {
           )}
         </div>
       </header>
-
-      {/* Back to top button */}
-      {scrolled && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-ngmun-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-ngmun-blue-700 transition duration-300 z-40 animate-fadeIn"
-        >
-          <ChevronUp size={24} />
-        </button>
-      )}
     </>
   );
 };
