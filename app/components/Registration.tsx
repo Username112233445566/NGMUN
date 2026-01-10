@@ -10,7 +10,8 @@ const Registration = () => {
     birthDate: '',
     phone: '',
     email: '',
-    telegramUsername: '', // Заменили institution на telegramUsername
+    telegramUsername: '',
+    institution: '',
     role: 'delegate',
     language: 'russian',
     committee: 'un-women',
@@ -55,7 +56,8 @@ const Registration = () => {
           birthDate: '',
           phone: '',
           email: '',
-          telegramUsername: '', // Очищаем новое поле
+          telegramUsername: '',
+          institution: '',
           role: 'delegate',
           language: 'russian',
           committee: 'un-women',
@@ -190,10 +192,10 @@ const Registration = () => {
                 />
               </div>
 
-              {/* Telegram ник (вместо учебного заведения) */}
+              {/* Telegram ник */}
               <div className="md:col-span-2 space-y-2">
                 <label htmlFor="telegramUsername" className="block text-sm font-medium text-gray-700">
-                  Telegram ник *
+                  {t('registration.form.telegramUsername')}
                 </label>
                 <input
                   type="text"
@@ -203,9 +205,26 @@ const Registration = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ngmun-blue-500 focus:border-transparent transition"
-                  placeholder="@username"
+                  placeholder={t('registration.form.telegramPlaceholder')}
                 />
-                <p className="text-sm text-gray-500">Укажите ваш Telegram username (например: @ivan_ivanov)</p>
+                <p className="text-sm text-gray-500">{t('registration.form.telegramHint')}</p>
+              </div>
+
+              {/* Учебное заведение */}
+              <div className="md:col-span-2 space-y-2">
+                <label htmlFor="institution" className="block text-sm font-medium text-gray-700">
+                  {t('registration.form.institution')}
+                </label>
+                <input
+                  type="text"
+                  id="institution"
+                  name="institution"
+                  value={formData.institution}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ngmun-blue-500 focus:border-transparent transition"
+                  placeholder="Название учебного заведения"
+                />
               </div>
             </div>
 
@@ -225,6 +244,7 @@ const Registration = () => {
                 >
                   <option value="delegate">{t('common.roles.delegate')}</option>
                   <option value="volunteer">{t('common.roles.volunteer')}</option>
+                  <option value="observer">{t('common.roles.observer')}</option>
                 </select>
               </div>
 
@@ -281,7 +301,7 @@ const Registration = () => {
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ngmun-blue-500 focus:border-transparent transition"
-                placeholder="Дополнительная информация или пожелания..."
+                placeholder={t('registration.form.commentPlaceholder')}
               />
             </div>
 

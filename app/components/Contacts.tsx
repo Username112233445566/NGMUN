@@ -1,6 +1,6 @@
 'use client';
 
-import { User, Bot, Mail, MessageCircle } from 'lucide-react';
+import { User, Instagram, Mail, MessageCircle } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { FAQItem, ContactPerson, GeneralContact } from '../../types/faq';
 
@@ -25,24 +25,24 @@ const Contacts = () => {
 
   const generalContacts: GeneralContact[] = [
     {
-      icon: <Bot size={24} className="text-ngmun-blue-600" />,
-      title: t('contacts.telegramBot'),
-      description: 'Для автоматических уведомлений',
-      link: 'https://t.me/ngmun_bot',
-      linkText: '@ngmun_bot'
+      icon: <Instagram size={24} className="text-ngmun-blue-600" />,
+      title: t('contacts.instagram'),
+      description: t('contacts.instagramDescription'),
+      link: 'https://www.instagram.com/next.gmun?igsh=MTF6aDQzODBxM2pqdQ==',
+      linkText: '@next.gmun'
     },
     {
       icon: <MessageCircle size={24} className="text-ngmun-blue-600" />,
       title: t('contacts.officialChannel'),
-      description: 'Новости и анонсы',
-      link: 'https://t.me/ngmun_official',
-      linkText: '@ngmun_official'
+      description: t('contacts.channelDescription'),
+      link: 'https://t.me/next_modelun',
+      linkText: '@next_modelun'
     },
     {
       icon: <Mail size={24} className="text-ngmun-blue-600" />,
       title: t('contacts.officialEmail'),
-      description: 'Для деловых предложений',
-      link: 'nextgen.modelun@gmail.com',
+      description: t('contacts.emailDescription'),
+      link: 'mailto:nextgen.modelun@gmail.com',
       linkText: 'nextgen.modelun@gmail.com'
     }
   ];

@@ -6,7 +6,24 @@ import { useLanguage } from './LanguageContext';
 const About = () => {
   const { t } = useLanguage();
 
-  const features = [
+  // Получаем переводы для фич
+  const featureTranslations = t('about.features', { returnObjects: true }) as any[] || [];
+
+  // Массив иконок в том же порядке, что и переводы
+  const icons = [
+    <Globe className="text-ngmun-blue-600" size={28} key="globe" />,
+    <MessageSquare className="text-ngmun-blue-600" size={28} key="message" />,
+    <Users className="text-ngmun-blue-600" size={28} key="users" />
+  ];
+
+  // Создаем объединенный массив фич с иконками и переводами
+  const features = featureTranslations.map((feature, index) => ({
+    ...feature,
+    icon: icons[index] || icons[0] // fallback на первую иконку
+  }));
+
+  // Fallback на оригинальные фичи если переводы не загрузились
+  const displayFeatures = features.length > 0 ? features : [
     {
       icon: <Globe className="text-ngmun-blue-600" size={28} />,
       title: 'Международный опыт',
@@ -42,7 +59,7 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {features.map((feature, index) => (
+            {displayFeatures.map((feature, index) => (
               <div key={index} className="text-center p-6">
                 <div className="bg-ngmun-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   {feature.icon}

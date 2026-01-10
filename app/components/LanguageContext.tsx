@@ -20,7 +20,17 @@ const translations = {
       title: 'Next Generation Model United Nations',
       subtitle: 'Образовательная симуляция работы ООН, где будущие лидеры решают глобальные проблемы',
       registerBtn: 'Зарегистрироваться',
-      viewCommittees: 'Посмотреть комитеты'
+      viewCommittees: 'Посмотреть комитеты',
+      features: {
+        international: 'Международный опыт',
+        internationalDesc: 'Симуляция, которая проводится в 64 странах мира',
+        participants: '200+ участников',
+        participantsDesc: 'Студенты и молодые специалисты',
+        committees: '6 комитетов',
+        committeesDesc: 'На русском, английском и кыргызском',
+        languages: '3 языка',
+        languagesDesc: 'Русский, английский, кыргызский'
+      }
     },
     
     // О модели ООН
@@ -30,7 +40,24 @@ const translations = {
       description2: 'Участники учатся вести дебаты, искать компромиссы, выступать публично и принимать решения как настоящие дипломаты. Это мероприятие проходит в 64 странах мира в рамках ООН.',
       team: 'Организационная команда',
       secretaryGeneral: 'Генеральный секретарь',
-      deputySecretary: 'Заместитель секретаря'
+      deputySecretary: 'Заместитель секретаря',
+      features: [
+        {
+          icon: '🌍',
+          title: 'Международный опыт',
+          description: 'Симуляция, которая проводится в 64 странах мира'
+        },
+        {
+          icon: '💬',
+          title: 'Развитие навыков',
+          description: 'Дипломатия, публичные выступления и критическое мышление'
+        },
+        {
+          icon: '👥',
+          title: 'Нетворкинг',
+          description: 'Встречайте единомышленников и будущих лидеров'
+        }
+      ]
     },
     
     // Комитеты
@@ -60,11 +87,15 @@ const translations = {
         birthDate: 'Дата рождения *',
         phone: 'Номер телефона *',
         email: 'Email *',
+        telegramUsername: 'Telegram ник *',
+        telegramPlaceholder: '@username',
+        telegramHint: 'Укажите ваш Telegram username (например: @ivan_ivanov)',
         institution: 'Учебное заведение *',
         role: 'Роль участника *',
         language: 'Выбор языка *',
         committee: 'Выбор комитета *',
         comment: 'Комментарий (по желанию)',
+        commentPlaceholder: 'Дополнительная информация или пожелания...',
         submit: 'Отправить заявку',
         success: 'Заявка успешно отправлена! Мы свяжемся с вами в течение 24 часов.',
         agreement: 'Нажимая кнопку, вы соглашаетесь на обработку персональных данных'
@@ -85,7 +116,12 @@ const translations = {
       telegramBot: 'Telegram Bot',
       officialChannel: 'Официальный канал',
       officialEmail: 'Официальный email',
+      instagram: 'Instagram',
+      instagramDescription: 'Официальная страница в Instagram',
+      channelDescription: 'Новости и анонсы',
+      emailDescription: 'Для деловых предложений',
       faq: 'Часто задаваемые вопросы',
+      officialChannels: 'Официальные каналы',
       faqItems: [
         {
           q: 'Как я узнаю, что моя регистрация принята?',
@@ -97,7 +133,7 @@ const translations = {
         },
         {
           q: 'Есть ли плата за участие?',
-          a: 'Информация о взносах будет опубликована на официальном канале Telegram @ngmun_official за 2 недели до мероприятия.'
+          a: 'Информация о взносах будет опубликована на официальном канале Telegram @next_modelun за 2 недели до мероприятия.'
         }
       ]
     },
@@ -137,7 +173,17 @@ const translations = {
       title: 'Next Generation Model United Nations',
       subtitle: 'Educational simulation of the UN where future leaders solve global problems',
       registerBtn: 'Register',
-      viewCommittees: 'View Committees'
+      viewCommittees: 'View Committees',
+      features: {
+        international: 'International Experience',
+        internationalDesc: 'Simulation held in 64 countries worldwide',
+        participants: '200+ Participants',
+        participantsDesc: 'Students and young professionals',
+        committees: '6 Committees',
+        committeesDesc: 'In Russian, English and Kyrgyz',
+        languages: '3 Languages',
+        languagesDesc: 'Russian, English, Kyrgyz'
+      }
     },
     about: {
       title: 'What is Model UN?',
@@ -145,7 +191,24 @@ const translations = {
       description2: 'Participants learn to debate, seek compromises, speak publicly and make decisions like real diplomats. This event takes place in 64 countries worldwide within the UN framework.',
       team: 'Organizational Team',
       secretaryGeneral: 'Secretary General',
-      deputySecretary: 'Deputy Secretary'
+      deputySecretary: 'Deputy Secretary',
+      features: [
+        {
+          icon: '🌍',
+          title: 'International Experience',
+          description: 'Simulation held in 64 countries worldwide'
+        },
+        {
+          icon: '💬',
+          title: 'Skills Development',
+          description: 'Diplomacy, public speaking and critical thinking'
+        },
+        {
+          icon: '👥',
+          title: 'Networking',
+          description: 'Meet like-minded people and future leaders'
+        }
+      ]
     },
     committees: {
       title: 'NGMUN Committees',
@@ -171,11 +234,15 @@ const translations = {
         birthDate: 'Date of Birth *',
         phone: 'Phone Number *',
         email: 'Email *',
+        telegramUsername: 'Telegram Username *',
+        telegramPlaceholder: '@username',
+        telegramHint: 'Enter your Telegram username (e.g. @john_doe)',
         institution: 'Educational Institution *',
         role: 'Participant Role *',
         language: 'Language Selection *',
         committee: 'Committee Selection *',
         comment: 'Comment (optional)',
+        commentPlaceholder: 'Additional information or wishes...',
         submit: 'Submit Application',
         success: 'Application successfully submitted! We will contact you within 24 hours.',
         agreement: 'By clicking the button, you agree to the processing of personal data'
@@ -192,9 +259,14 @@ const translations = {
       title: 'Contacts',
       subtitle: 'Contact NGMUN organizers',
       telegramBot: 'Telegram Bot',
-      officialChannel: 'Official Channel',
+      officialChannel: 'Official Telegram Channel',
       officialEmail: 'Official Email',
+      instagram: 'Instagram',
+      instagramDescription: 'Official Instagram page',
+      channelDescription: 'News and announcements',
+      emailDescription: 'For business proposals',
       faq: 'Frequently Asked Questions',
+      officialChannels: 'Official Channels',
       faqItems: [
         {
           q: 'How do I know if my registration is accepted?',
@@ -206,7 +278,7 @@ const translations = {
         },
         {
           q: 'Is there a participation fee?',
-          a: 'Information about fees will be published on the official Telegram channel @ngmun_official 2 weeks before the event.'
+          a: 'Information about fees will be published on the official Telegram channel @next_modelun 2 weeks before the event.'
         }
       ]
     },
@@ -242,7 +314,17 @@ const translations = {
       title: 'Next Generation Model United Nations',
       subtitle: 'Келечектеги лидерлер глобалдык маселелерди чечкен БУУнун билим берүү симуляциясы',
       registerBtn: 'Катталуу',
-      viewCommittees: 'Комитеттерди көрүү'
+      viewCommittees: 'Комитеттерди көрүү',
+      features: {
+        international: 'Эл аралык тажрыйба',
+        internationalDesc: '64 өлкөдө өткөрүлгөн симуляция',
+        participants: '200+ катышуучу',
+        participantsDesc: 'Студенттер жана жаш адистер',
+        committees: '6 комитет',
+        committeesDesc: 'Орус, англис жана кыргыз тилдеринде',
+        languages: '3 тил',
+        languagesDesc: 'Орусча, англисче, кыргызча'
+      }
     },
     about: {
       title: 'Модель ООН деген эмне?',
@@ -250,7 +332,24 @@ const translations = {
       description2: 'Катышуучулар талкуулоону үйрөнүшөт, компромисстерди издешет, коомчулук алдында сүйлөшөт жана чыныгы дипломаттар сыяктуу чечимдерди кабыл алышат. Бул иш-чара 64 өлкөдө БУУнун алкагында өткөрүлөт.',
       team: 'Уюштуруучу команда',
       secretaryGeneral: 'Башкы катчы',
-      deputySecretary: 'Катчынын орун басары'
+      deputySecretary: 'Катчынын орун басары',
+      features: [
+        {
+          icon: '🌍',
+          title: 'Эл аралык тажрыйба',
+          description: '64 өлкөдө өткөрүлгөн симуляция'
+        },
+        {
+          icon: '💬',
+          title: 'Өнүктүрүлгөн көндүмдөр',
+          description: 'Дипломатия, коомчулук алдында сүйлөө жана сын ой жүгүртүү'
+        },
+        {
+          icon: '👥',
+          title: 'Нетворкинг',
+          description: 'Ой-пикири окшош адамдар жана келечектеги лидердер менен жолугуу'
+        }
+      ]
     },
     committees: {
       title: 'NGMUN комитеттери',
@@ -276,11 +375,15 @@ const translations = {
         birthDate: 'Туулган күнү *',
         phone: 'Телефон номери *',
         email: 'Email *',
+        telegramUsername: 'Telegram ник *',
+        telegramPlaceholder: '@колдонуучунун_аты',
+        telegramHint: 'Телеграм колдонуучунун атын көрсөтүңүз (мисалы: @супер_колдонуучу)',
         institution: 'Билим берүү мекемеси *',
         role: 'Катышуучунун ролу *',
         language: 'Тилди тандау *',
         committee: 'Комитетти тандау *',
         comment: 'Комментарий (каалаган)',
+        commentPlaceholder: 'Кошумча маалымат же каалоолор...',
         submit: 'Арыз жөнөтүү',
         success: 'Арыз ийгиликтүү жөнөтүлдү! Биз 24 саат ичинде сиз менен байланышабыз.',
         agreement: 'Баскычты басуу менен сиз жеке маалыматтарды иштетүүгө макулсуз'
@@ -297,9 +400,14 @@ const translations = {
       title: 'Байланыш',
       subtitle: 'NGMUN уюштуруучулары менен байланыш',
       telegramBot: 'Telegram Bot',
-      officialChannel: 'Расмий канал',
+      officialChannel: 'Расмий Telegram каналы',
       officialEmail: 'Расмий email',
+      instagram: 'Instagram',
+      instagramDescription: 'Instagramдагы расмий баракча',
+      channelDescription: 'Жаңылыктар жана жарыялар',
+      emailDescription: 'Бизнес сунуштар үчүн',
       faq: 'Көп берилүүчү суроолор',
+      officialChannels: 'Расмий каналдар',
       faqItems: [
         {
           q: 'Менин катталуум кабыл алынганын кантип билем?',
@@ -311,7 +419,7 @@ const translations = {
         },
         {
           q: 'Катышуу үчүн төлөм барбы?',
-          a: 'Төлөм жөнүндө маалымат иш-чарадан 2 жума мурун Telegram каналында @ngmun_official жарыяланат.'
+          a: 'Төлөм жөнүндө маалымат иш-чарадан 2 жума мурун Telegram каналында @next_modelun жарыяланат.'
         }
       ]
     },
@@ -355,7 +463,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       if (value && typeof value === 'object' && key in value) {
         value = value[key];
       } else {
-        return path;
+        // Fallback to Russian if translation not found
+        let fallbackValue: any = translations['ru'];
+        for (const fallbackKey of keys) {
+          if (fallbackValue && typeof fallbackValue === 'object' && fallbackKey in fallbackValue) {
+            fallbackValue = fallbackValue[fallbackKey];
+          } else {
+            return path; // Return the path itself if not found even in fallback
+          }
+        }
+        return fallbackValue || path;
       }
     }
     

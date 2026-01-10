@@ -31,10 +31,22 @@ const Hero = () => {
   }, []);
 
   const features = [
-    { icon: <Globe className="text-white" size={20} />, text: '64 страны мира' },
-    { icon: <Users className="text-white" size={20} />, text: '200+ участников' },
-    { icon: <MessageSquare className="text-white" size={20} />, text: '6 комитетов' },
-    { icon: <Target className="text-white" size={20} />, text: '3 языка' },
+    { 
+      icon: <Globe className="text-white" size={20} />, 
+      text: t('hero.features.international') || '64 страны мира' 
+    },
+    { 
+      icon: <Users className="text-white" size={20} />, 
+      text: t('hero.features.participants') || '200+ участников' 
+    },
+    { 
+      icon: <MessageSquare className="text-white" size={20} />, 
+      text: t('hero.features.committees') || '6 комитетов' 
+    },
+    { 
+      icon: <Target className="text-white" size={20} />, 
+      text: t('hero.features.languages') || '3 языка' 
+    },
   ];
 
   return (
@@ -113,17 +125,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-ngmun-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
         </div>
-
-        {/* Стрелка для скроллаа вниз */}
-        {/* <button
-          onClick={() => scrollToSection('about')}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-        >
-          <div className="bg-white p-3 rounded-full shadow-lg">
-            <ChevronDown className="text-ngmun-blue-600" size={24} />
-          </div>
-        </button> */}
-      </div> */
+      </div>
 
       {/* Волна внизу */}
       <div className="absolute bottom-0 left-0 right-0">

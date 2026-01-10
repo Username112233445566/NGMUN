@@ -49,7 +49,7 @@ const Footer = () => {
             <p className="text-gray-400">{t('footer.follow')}</p>
             <div className="flex space-x-4 mt-4 justify-center md:justify-end">
               <a 
-                href="https://t.me/ngmun_official" 
+                href="https://t.me/next_modelun" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition duration-300"
@@ -57,7 +57,9 @@ const Footer = () => {
                 Telegram
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/next.gmun?igsh=MTF6aDQzODBxM2pqdQ==" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition duration-300"
               >
                 Instagram
@@ -83,14 +85,14 @@ const Footer = () => {
           <Heart className="w-4 h-4 text-red-500 animate-pulse" />
           <span className="text-sm">командой</span>
           <a 
-            href="https://umar-kasenov.vercel.app/" 
+            href="https://next-bit.vercel.app/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center space-x-2 text-ngmun-blue-300 hover:text-white transition duration-300"
           >
             <Code2 className="w-4 h-4" />
             <span className="font-semibold bg-gradient-to-r from-ngmun-blue-300 to-ngmun-blue-100 bg-clip-text text-transparent group-hover:from-white group-hover:to-gray-200">
-              ZAMAN Studio
+              NextBit
             </span>
           </a>
         </div>

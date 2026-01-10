@@ -24,7 +24,8 @@ function escapeMarkdown(text: string): string {
     .replace(/\{/g, '\\{')
     .replace(/\}/g, '\\}')
     .replace(/\./g, '\\.')
-    .replace(/!/g, '\\!');
+    .replace(/!/g, '\\!')
+    .replace(/@/g, '\\@');
 }
 
 export async function POST(request: NextRequest) {
