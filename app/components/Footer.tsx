@@ -77,7 +77,7 @@ const Footer = () => {
       {/* Вставьте этот блок вместо последнего div с классом border-t */}
       <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
         <div className="text-gray-400 text-center md:text-left mb-4 md:mb-0">
-          <p>© 2024 NGMUN - Next Generation Model United Nations. {t('footer.rights')}</p>
+          <p>© 2026 NGMUN - Next Generation Model United Nations. {t('footer.rights')}</p>
         </div>
         
         <div className="flex items-center justify-center space-x-2 text-gray-400">
