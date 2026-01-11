@@ -87,7 +87,7 @@ const About = () => {
                 <h4 className="font-bold text-ngmun-blue-600 text-lg">
                   {t('about.deputySecretary')}
                 </h4>
-                <p className="text-gray-700 mt-2">Султанова Асель</p>
+                <p className="text-gray-700 mt-2">Муслим Бахадиров</p>
               </div>
             </div>
           </div>

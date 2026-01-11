@@ -16,10 +16,10 @@ const Contacts = () => {
       email: 'ddtty044@gmail.com',
     },
     {
-      name: 'Султанова Асель',
+      name: 'Муслим Бахадиров',
       position: t('about.deputySecretary'),
-      telegram: '@srwxmi',
-      email: 'srwxmi@gmail.com',
+      telegram: '@MuslimBahadirov',
+      email: 'muslim190684@icloud.com',
     },
   ];
 
