@@ -7,17 +7,10 @@ const Committees = () => {
 
   const committees = [
     {
-      id: 'un-women',
-      title: 'Комитет ООН Женщины',
-      language: 'Русский',
-      topic: 'Гендерное неравенство и трудности с которыми сталкиваются женщины в регионе Центральной Азии',
-      icon: '♀️'
-    },
-    {
       id: 'general-assembly',
       title: 'Генеральная Ассамблея',
       language: 'Русский',
-      topic: 'Реформа право ВЕТО.',
+      topic: 'Модификация Устава ООН для повышения эффективности работы Совета Безопасности ООН',
       icon: '🏛️'
     },
     {
@@ -88,7 +81,7 @@ const Committees = () => {
               </h3>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {committees.slice(0, 4).map((committee) => (
+              {committees.slice(0, 3).map((committee) => (
                 <div key={committee.id} className="card hover:border-ngmun-blue-300 border-2 border-transparent transition-all duration-300">
                   <div className="flex items-start mb-4">
                     <div className="bg-ngmun-blue-100 p-3 rounded-lg mr-4">
@@ -132,20 +125,20 @@ const Committees = () => {
               <div className="card hover:border-ngmun-blue-300 border-2 border-transparent transition-all duration-300">
                 <div className="flex items-start mb-4">
                   <div className="bg-ngmun-blue-100 p-3 rounded-lg mr-4">
-                    <span className="text-xl">{committees[4].icon}</span>
+                    <span className="text-xl">{committees[3].icon}</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-800">{committees[4].title}</h4>
+                    <h4 className="text-xl font-bold text-gray-800">{committees[3].title}</h4>
                     <div className="flex items-center mt-2">
                       <span className="text-gray-600 text-sm">
-                        {t('committees.language')}: {committees[4].language}
+                        {t('committees.language')}: {committees[3].language}
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="mt-4">
                   <span className="text-gray-700 font-medium">{t('committees.topic')}:</span>
-                  <p className="text-gray-700 mt-1">{committees[4].topic}</p>
+                  <p className="text-gray-700 mt-1">{committees[3].topic}</p>
                 </div>
                 <button
                   onClick={() => scrollToSection('registration')}
@@ -171,20 +164,20 @@ const Committees = () => {
               <div className="card hover:border-ngmun-blue-300 border-2 border-transparent transition-all duration-300">
                 <div className="flex items-start mb-4">
                   <div className="bg-ngmun-blue-100 p-3 rounded-lg mr-4">
-                    <span className="text-xl">{committees[5].icon}</span>
+                    <span className="text-xl">{committees[4].icon}</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-800">{committees[5].title}</h4>
+                    <h4 className="text-xl font-bold text-gray-800">{committees[4].title}</h4>
                     <div className="flex items-center mt-2">
                       <span className="text-gray-600 text-sm">
-                        {t('committees.language')}: {committees[5].language}
+                        {t('committees.language')}: {committees[4].language}
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="mt-4">
                   <span className="text-gray-700 font-medium">{t('committees.topic')}:</span>
-                  <p className="text-gray-700 mt-1">{committees[5].topic}</p>
+                  <p className="text-gray-700 mt-1">{committees[4].topic}</p>
                 </div>
                 <button
                   onClick={() => scrollToSection('registration')}
